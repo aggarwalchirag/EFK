@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: app-ingress
+spec:
+  rules:
+  - host: kube-1.lab.com
+    http:
+      paths:
+      - backend:
+          serviceName: myappsvc1
+          servicePort: 80
+        path: /myapp1
