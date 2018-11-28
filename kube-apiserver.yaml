@@ -1,0 +1,9 @@
+volumes:
+  - hostPath:
+  	path: /etc/kubernetes/openstack.crt
+  	type: FileOrCreate
+	name: openstack-cert
+	volumeMounts:
+	- mountPath: /etc/kubernetes/openstack.crt
+  	name: openstack-cert
+  	readOnly: true
